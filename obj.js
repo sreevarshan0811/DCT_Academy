@@ -1,6 +1,6 @@
 // git init
 // git add README.md
-// git commit -m "first commit"
+// git commit -m "initial commit"
 // git branch -M main
 // git remote add origin https://github.com/sreevarshan0811/exe_1.git
 // git push -u origin main
