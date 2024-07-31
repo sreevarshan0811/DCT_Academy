@@ -71,3 +71,4 @@
 console.log(getAscii('abc'))
 console.log(getAscii('ab'))
 console.log(getAscii('abcd'))
+console.log(getAscii('abc'))
