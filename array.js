@@ -56,3 +56,41 @@
 
 
 
+
+// function a(a){
+//     return function b(b){
+//         return function c(c){
+//             return (a+b+c)
+//         }
+//     }
+// }
+// let res = a
+// console.log(res(1)(2)(3))
+// console.log(res(1)(2,3))
+// console.log(res(1,2,3))
+
+
+//Currying    
+function multiply(...args){
+
+    };
+
+function advancedCurry(fn) {
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn(...args);
+        } else {
+            return function(...moreArgs) {
+                return curried(...args, ...moreArgs);
+            };
+        }
+    };
+}
+
+const curriedAdvanced = advancedCurry(multiply); // multiply -- (HOC) higher order function(function taking another function as an input and returning another function as an output)
+
+// console.log(curriedAdvanced(2)(4)(6));
+// console.log(curriedAdvanced(2,4)(6));
+// console.log(curriedAdvanced(2)(4,6));
+console.log(curriedAdvanced(2,4,6));
+console.log(curriedAdvanced(2,4,6,8))
