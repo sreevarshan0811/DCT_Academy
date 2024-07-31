@@ -94,3 +94,4 @@ const curriedAdvanced = advancedCurry(multiply); // multiply -- (HOC) higher ord
 // console.log(curriedAdvanced(2)(4,6));
 console.log(curriedAdvanced(2,4,6));
 console.log(curriedAdvanced(2,4,6,8))
+console.log(curriedAdvanced(2,4,6,8))
