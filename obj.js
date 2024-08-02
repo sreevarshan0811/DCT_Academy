@@ -59,16 +59,75 @@
 // console.log(evenOdd([10,11,12,13,14]))
 
 
+
 //Find the ASCII values
- const getAscii = str =>
-{
-    const result = {}
+//  const getAscii = str =>
+// {
+//     const result = {}
+//     for(let char of str){
+//         result[char] = char.charCodeAt()
+//     }
+//     return result
+// }
+// console.log(getAscii('abc'))
+// console.log(getAscii('ab'))
+// console.log(getAscii('abcd'))
+// console.log(getAscii('abc'))
+
+
+
+//Find Length
+// function findLength(arr)
+// {
+//     const result = {}
+//     arr.forEach(function(ele) 
+//     {
+//         result[ele] = ele.length   
+//     })
+//     return result
+// }
+// console.log(findLength(['a','ab','abc']))
+// console.log(findLength(['aa','aaa','aaaa']))
+
+
+// const makeObj = arr =>
+// {
+//     const obj = {}
+//     for(let char in arr)
+//     {
+//         obj[char] = arr[char]
+//     }
+//     return obj
+// }
+// console.log(makeObj(['a','b','c']))
+
+
+// function makeobj(arr)
+// {
+//     const obj = {}
+//     arr.forEach((ele,i) =>
+//     {
+//         obj[i] = ele
+//     })
+//     return obj
+// }
+// console.log(makeobj(['a','b','c']))
+
+
+
+//Frequency distribution 
+const frequency = str =>{
+    const obj = {}
     for(let char of str){
-        result[char] = char.charCodeAt()
+        if(char in obj){
+            obj[char] += 1
+        }
+        else{
+            obj[char] = 1
+        }
     }
-    return result
+    return obj
 }
-console.log(getAscii('abc'))
-console.log(getAscii('ab'))
-console.log(getAscii('abcd'))
-console.log(getAscii('abc'))
+console.log(frequency('ddcccttd'))
+console.log(frequency('aaabbbccccdddeefff'))
+console.log(frequency('aaasssdddfff'))
