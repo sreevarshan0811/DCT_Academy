@@ -116,18 +116,81 @@
 
 
 //Frequency distribution 
-const frequency = str =>{
-    const obj = {}
-    for(let char of str){
-        if(char in obj){
-            obj[char] += 1
-        }
-        else{
-            obj[char] = 1
-        }
+// const frequency = str =>{
+//     const obj = {}
+//     for(let char of str){
+//         if(char in obj){
+//             obj[char] += 1
+//         }
+//         else{
+//             obj[char] = 1
+//         }
+//     }
+//     return obj
+// }
+// console.log(frequency('ddcccttd'))
+// console.log(frequency('aaabbbccccdddeefff'))
+// console.log(frequency('aaasssdddfff'))
+// console.log(frequency('qazwsxcdrefvgbthnjhuyoofnfesmcweufnicniigfcqiwgquygcfuy'))
+
+//Find the frequency
+// function frequency(arr)
+// {
+//     const freq = {}
+//     const repeated  = [],notrepeated = []
+//     arr.forEach(function(ele){
+//         if(ele in freq){
+//             freq[ele]+=1
+//         }
+//         else{
+//             freq[ele] = 1
+//         }
+//     })
+//     for(ele in freq){
+//         if(freq[ele] > 1){
+//             repeated.push(ele)
+//         }
+//     }
+//     for(ele in freq){
+//         if(freq[ele] == 1){
+//             notrepeated.push(ele)
+//         }
+//     }
+//     return {repeated,notrepeated}
+
+// }
+// console.log(frequency(['a','a','b','c','b','d']))
+
+
+
+//['ddcdcdct'] -> {d:[0,1,3,5],c:[2,4,6],t:[7]}
+// function count(str)
+// {
+//     const obj = {}
+//     const result =[]
+//     for(let i = 0;i<str.length;i++)
+//     {
+//         if(str[i] in obj){
+//             obj[str[i]].push(i)
+//         }
+//         else{
+//             obj[str[i]] = [i]
+//         }
+//     }
+//     return obj
+// }
+// console.log(count('ddcdcdct'))
+
+
+//Swap 
+const swap = obj =>
+{
+    const result = {}
+    for(let key in obj)
+    {
+        result[obj[key]] = key
     }
-    return obj
+    return result
 }
-console.log(frequency('ddcccttd'))
-console.log(frequency('aaabbbccccdddeefff'))
-console.log(frequency('aaasssdddfff'))
+console.log(swap({'white':'peace','green':'nature'}))
+console.log(swap({'car':'bike','plane':'boat','run':'walk'}))
