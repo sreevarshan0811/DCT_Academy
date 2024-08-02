@@ -73,14 +73,15 @@
 //Currying    
 function multiply(...args){
 
+    
     };
 
-function advancedCurry(fn) {
-    return function curried(...args) {
+function advancedCurry(a) {
+    return function curried(b) {
         if (args.length >= fn.length) {
             return fn(...args);
         } else {
-            return function(...moreArgs) {
+            return function(c) {
                 return curried(...args, ...moreArgs);
             };
         }
@@ -89,9 +90,9 @@ function advancedCurry(fn) {
 
 const curriedAdvanced = advancedCurry(multiply); // multiply -- (HOC) higher order function(function taking another function as an input and returning another function as an output)
 
-// console.log(curriedAdvanced(2)(4)(6));
+console.log(curriedAdvanced(2)(4)(6));
 // console.log(curriedAdvanced(2,4)(6));
 // console.log(curriedAdvanced(2)(4,6));
-console.log(curriedAdvanced(2,4,6));
-console.log(curriedAdvanced(2,4,6,8))
-console.log(curriedAdvanced(2,4,6,8))
+// console.log(curriedAdvanced(2,4,6));
+// console.log(curriedAdvanced(2,4,6,8))
+// console.log(curriedAdvanced(2,4,6,8))
