@@ -567,3 +567,245 @@
 // console.log(checkPalindrome('scary'))
 // console.log(checkPalindrome('reviver'))
 // console.log(checkPalindrome('stressed'))
+
+
+
+// ----------------------------------------EXE-3-------------------------------------------------------------------------------------------------
+
+
+//Converting objects to array
+// const toarray = obj =>Object.entries(obj)
+// console.log(toarray({a:1 , b:2}))
+// console.log(toarray({'shrimp':15 , 'tots':12}))
+// console.log(toarray({}))
+
+
+//Index multiplier
+// const indexMultiplier = arr =>
+// {
+//     let res = 0
+//     arr1 = arr.map((ele,index)=> index*ele)
+//     for(let i=0 ; i<arr1.length ; i++){res += arr1[i]}
+//     return res
+// }
+// console.log(indexMultiplier([1, 2, 3, 4, 5]))
+
+
+//Special array
+// const isSpecialArray = arr =>
+// {
+//     let eve = [], odd=[]
+//     for(let i=0 ; i<arr.length; i++)
+//     {
+//         if(arr[2] % 2 != 0 | arr[3] % 2 != 1){return false}
+//         else
+//         {
+//             if(arr[i] % 2 == 0){eve.push(arr[i])}
+//             else if(arr[i] % 2 != 0){odd.push(arr[i])}
+//         }
+//     }
+//     return ['Even indices = '+eve, 'Odd indices = '+ odd]
+// }
+// console.log(isSpecialArray([2,7,4,9,6,1,6,3]))
+// console.log(isSpecialArray([2,7,9,1,6,1,6,3]))
+// console.log(isSpecialArray([2,7,8,8,6,1,6,3]))
+
+
+
+//Match the last element
+// const matchLastItem = arr =>
+// {
+//     let arr1 = '' 
+//     for(let i=0 ; i <arr.length-1 ; i++)
+//     {
+//         arr1 += arr[i]
+//     }
+//     return arr1 === arr[arr.length-1]
+// }
+// console.log(matchLastItem(['rsq' , '6hi' , 'g' , 'rsq6hig']))
+// console.log(matchLastItem([1 , 1 , 1 , '11']))
+// console.log(matchLastItem([8 , 'Thunder' , true , '8Thundertrue']))
+
+
+//Sum of number elements in an array
+// const numberSum = arr =>
+// {
+//     let sum = 0
+//     arr.forEach((ele) => 
+//     {
+//         if(typeof ele === 'number'){sum += ele}
+//     })
+//     return sum
+// }
+// console.log(numberSum([1 , 2 ,'13' , '4' , '645']))
+// console.log(numberSum([true , false , '123' , '75']))
+// console.log(numberSum([1 , 2 , 3 , 4 , 5 , true]))
+
+
+//Add its name
+// const addName = (obj,str,num) => 
+// {
+//     obj[str] = num
+//     return obj
+// }
+// console.log(addName({},'Brutus', 300))
+// console.log(addName({piano:500},'Brutus', 300))
+// console.log(addName({piano:500, stereo:300},'Caligula', 440))
+
+
+
+
+//Return keys and values
+// const keysAndValues = obj => [Object.keys(obj),Object.values(obj)]
+// console.log(keysAndValues({a:1 , b:2 , c:3}))
+// console.log(keysAndValues({a:'Apple' , b:'Microsoft' , c:'Google'}))
+// console.log(keysAndValues({key1:true , key2:false , key3:undefined}))
+
+
+
+//Return Duplicates
+// const removeDups = arr=> [...new Set(arr)]
+// console.log(removeDups([1 ,0 ,1 ,0]))
+// console.log(removeDups(['The', 'big','cat']))
+// console.log(removeDups(['John','Taylor','John']))
+
+
+//Ageing the population
+// const afterNYears = (obj,num) =>
+// {
+//     for(let key in obj)
+//     {
+//         obj[key] += num
+//     }
+//     return obj
+// }
+// console.log(afterNYears({'Joel': 32, 'Fred':44,'Reqinald':65,'Susan':33,'Julian':13} , 1))
+// console.log(afterNYears({'Baby': 2, 'Child':8,'Teenager':15,'Adult':25,'Elderly':71} , 19))
+// console.log(afterNYears({'Genie': 1000  , 'Joe':40} , 5))
+
+
+//Name Score
+// const nameScore = str =>
+// {
+//     let sum = 0
+//     const scores = {"A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3, "H": 10, 
+//         "I": 200, "J": 100, "K": 114, "L": 100, "M": 25, "N": 450, "O": 80, "P": 2, 
+//         "Q": 12, "R": 400, "S": 113, "T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23}
+//     for(let i =0 ; i< str.length; i++){
+//         if (str[i] in scores){
+//             sum += scores[str[i]]
+//         }
+//     }
+//     if(sum <=60){return "NOT GOOD SCORE"}
+//     else if(sum >=61 && sum <= 300){return 'PRETTY SCORE'}
+//     else if(sum >=301 && sum <=599){return 'VERY GOOD'}
+//     else if(sum >= 600){return 'THE BEST'} 
+// }
+// console.log(nameScore('YOU'))
+// console.log(nameScore('MATT'))
+// console.log(nameScore('PUBG'))
+
+//--------------------------------------------------EXE - 4-------------------------------------------------------------------------------------
+
+//Number to reversed array
+// const reverseArr = num => num.toString().split('').reverse()
+// console.log(reverseArr(1485979))
+// console.log(reverseArr(623478))
+// console.log(reverseArr(12345))
+
+
+//Check if all the values are true
+// const allTruthy = (...agrs) => agrs.every(x => x)
+// console.log(allTruthy(true,true,true))
+// console.log(allTruthy(true,false,true))
+// console.log(allTruthy(5,4,3,2,1,0))
+
+
+
+//Reverse and not
+// const reverseAndNot = num => num.toString().split('').reverse().join('') + num
+// console.log(reverseAndNot(123))
+// console.log(reverseAndNot(152))
+// console.log(reverseAndNot(123456789))
+
+
+
+//Reverse the Number
+// const rev = num => num.toString().split('').reverse().join('')
+// console.log(rev(5121))
+// console.log(rev(69))
+// console.log(rev(-122157))
+
+
+
+//Multiply numbers in a string
+// const multiplyNums = str => {
+//     let pdt = 1
+//     for (let i = 0; i < str.length; i++) 
+//     {
+//         if (!isNaN(str[i])) 
+//         {
+//             pdt *= parseInt(str[i])
+//         }
+//     }
+//     return pdt
+// }
+// console.log(multiplyNums('2, 3'))
+// console.log(multiplyNums('1, 2, 3, 4'))
+// console.log(multiplyNums('54, 75, 453, 0'))
+// console.log(multiplyNums('10, -2'))
+
+
+//Reverse words in string
+// const reverseWords = str => str.split(' ').reverse().join(' ')
+// console.log(reverseWords(' the sky is blue'))
+// console.log(reverseWords('hello world!  '))
+// console.log(reverseWords('a good example'))
+
+
+//Total volume of boxes
+// function totalVolume(...obj)
+// {
+//     let total = 0
+//     for(let box of obj)
+//     {
+//         total += box[0]*box[1]*box[2]   
+//     }
+//     return total
+// }
+// console.log(totalVolume([4,2,4],[3,3,3],[1,1,2],[2,1,1]))
+// console.log(totalVolume([2,2,2],[2,1,1]))
+// console.log(totalVolume([1,1,1]))
+
+
+
+//Square every digits
+// const squaerDigits = num =>
+// {
+//     let num1 = num.toString().split('') , sqrt = ''
+//     for(let i=0; i<num1.length; i++)
+//     {
+//         sqrt +=(num1[i]*num1[i])
+//     }
+//     return sqrt
+// }
+// console.log(squaerDigits(9119))
+// console.log(squaerDigits(2483))
+// console.log(squaerDigits(3212))
+
+
+//Is Robbie making progress?
+// const progressDays = (obj) =>
+// {
+//     let count = 0
+//     for(let i=0 ; i<obj.length ; i++)
+//     {
+//         if(obj[i] < obj[i+1])
+//             {count +=1}
+//     }
+//     return count
+// }
+// console.log(progressDays([3,4,1,2]))
+// console.log(progressDays([10,11,12,9,10]))
+// console.log(progressDays([6,5,4,3,2,9]))
+// console.log(progressDays([9,9]))
