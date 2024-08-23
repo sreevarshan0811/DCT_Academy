@@ -46,6 +46,13 @@ Deliverables:
       * Instructions for running the server locally
 
 
+# Note :
+mkdir express-server -> to create express-server file
+cd express-servers   -> to access express-server file
+npm init             -> to initialize
+npm install express  -> to install express packages
+
+
 
 
 
