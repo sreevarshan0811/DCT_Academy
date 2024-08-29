@@ -1,5 +1,5 @@
 const express = require('express')
-const port = 3050 
+const port = 4000 
 const app = express()
 const tasks = [
     { id: 1, title: "Setup Project", description: "Initialize the project structure", status: "completed" }, 
@@ -15,16 +15,12 @@ const tasks = [
 ]
 
 //Displays whole task details
-app.get('/tasks-details', (req,res)=>{
+app.get('/tasks', (req,res)=>{
     res.json(tasks)
 })
-app.listen(port, () => {
-    console.log('express server is running on port', port)
-})
 
-
-//Displays all tasks
-app.get('/tasks',(req,res) =>{
+// //Displays all tasks
+app.get('/tasks/all-tasks',(req,res) =>{
     let alltasks = []
     for(let i=0 ; i<tasks.length ; i++)
     {
@@ -34,8 +30,8 @@ app.get('/tasks',(req,res) =>{
 })
 
 
-//Displays tasks of given ID
-app.get('/tasks/:id',(req,res) => {
+// //Displays tasks of given ID
+app.get('/tasks/single-task/:id',(req,res) => {
     const id = req.params.id
     const task = tasks.find(task => task.id == id)
     if(task){
@@ -47,7 +43,7 @@ app.get('/tasks/:id',(req,res) => {
 })
 
 
-//Displays tasks based on the status
+// //Displays tasks based on the status
 app.get('/tasks/status/:status',(req,res) =>{
     let taskStatus = []
     const taskstatus = req.params.status
@@ -62,4 +58,52 @@ app.get('/tasks/status/:status',(req,res) =>{
         }
     }
     res.json('Tasks '+taskstatus+' - '+taskStatus)
+})
+
+app.post('/tasks/create-task',(req,res) => {
+    const obj = {
+        title: "Project Manager", 
+        description: "Manage the project", 
+        status: "in-progress"
+    }
+    obj.id = Number(new Date())
+    tasks.push(obj)
+    res.json(tasks)
+})
+
+app.put('/tasks/update-task/:id',(req,res) =>{
+    const id = req.params.id
+    const body = {title:"Game designer",
+        description: "Create a game", 
+        status: "completed"
+    }
+    const updateTask = tasks.find(ele => ele.id == Number(id))
+    if(updateTask)
+    {
+        Object.assign(updateTask,body)
+        res.json(tasks)
+    }
+    else{
+        res.status(404).json({message: "Task not found"})
+    }
+})
+
+app.delete('/tasks/delete-task/:id',(req,res) =>
+    {
+   const id = req.params.id
+   const index = tasks.findIndex((ele) => 
+   {
+       return ele.id === Number(id)
+   })
+   if(index >=0)
+       {
+           const result = tasks.splice(index,1)
+           res.json(tasks)
+       }
+       else{
+           res.status(404).json("No task id")
+       } 
+})
+app.listen(port, () => {
+    console.log('express server is running on port', port)
 })
