@@ -10,6 +10,8 @@
 //     console.log(count)
 // }
 
+// const { total } = require("./backend/expense-mvc/app/controllers/expenses-cltr")
+
 
 //ONLY_VOWELS
 // const city = 'BaNgAlOrE',vowels = 'aeiouAEIOU'
@@ -93,3 +95,52 @@
 //     }
 // }
 // console.log(cap+small)
+
+
+const Expense = [
+    {
+        "_id": "66dff012e41d3f12ae5ed742",
+        "expenseDate": "2024-09-10T00:00:00.000Z",
+        "amount": 3000,
+        "category": "66dab9872fefd8e00fdc17bf",
+        "createdAt": "2024-09-10T07:06:58.024Z",
+        "updatedAt": "2024-09-10T14:36:50.651Z",
+        "__v": 0
+    },
+    {
+        "_id": "66dff03ee41d3f12ae5ed745",
+        "expenseDate": "2024-09-10T00:00:00.000Z",
+        "amount": 2000,
+        "category": "66dab9ad2fefd8e00fdc17c4",
+        "createdAt": "2024-09-10T07:07:42.312Z",
+        "updatedAt": "2024-09-10T14:36:08.609Z",
+        "__v": 0
+    },
+    {
+        "_id": "66dff05ee41d3f12ae5ed748",
+        "expenseDate": "2024-09-10T00:00:00.000Z",
+        "amount": 9000,
+        "category": "66dab9b72fefd8e00fdc17c6",
+        "createdAt": "2024-09-10T07:08:14.999Z",
+        "updatedAt": "2024-09-10T14:35:08.651Z",
+        "__v": 0
+    },
+    {
+        "_id": "66e046b9fc6e260a55183ce0",
+        "expenseDate": "2024-09-10T00:00:00.000Z",
+        "amount": 3500,
+        "category": "66dab9c62fefd8e00fdc17c8",
+        "createdAt": "2024-09-10T13:16:41.671Z",
+        "updatedAt": "2024-09-10T14:33:29.962Z",
+        "__v": 0
+    }
+]
+let total = 0
+for (let i =0; i<Expense.length; i++)
+    {
+        total += Expense[i].amount 
+    }
+    console.log(total)
+
+
+
