@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const port = 3030
 const configureDb = require('./config/db')
 const {checkSchema , validationResult} = require('express-validator')
@@ -8,6 +9,7 @@ const categoriesCltr = require('./app/controllers/categories-cltr')
 const expensesCltr = require('./app/controllers/expenses-cltr')
 configureDb()
 app.use(express.json())
+app.use(cors())
 
 
 //Categories API

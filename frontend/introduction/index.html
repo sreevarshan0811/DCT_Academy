@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Count Down</title>
+        <style>
+            body{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+                background-color: rgb(241, 3, 249);
+                color: rgb(11, 11, 11);
+            }
+            h2{
+                font-size: 40px;
+            }
+            button{
+                background-color: #c24b07;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                width: 200px;
+                color: rgb(235, 225, 225);
+            }
+            button:hover{
+                background-color: rgb(13, 0, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Count Down</h1>
+        <h2>10</h2>
+        <button onclick="startTimer(event)">start</button>
+        <button onclick="stopTimer(event)">stop</button>
+        <script>
+            function startTimer(event){
+                event.target.style.display = 'none'
+                let coutDown
+                let time = 10
+                countDown = setInterval(() =>{
+                    if(time <= 1 ){
+                        clearInterval(coutDown)
+                        document.querySelector('h2').textContent = "Time's Up...!"
+                    }
+                    else{
+                        time--
+                        document.querySelector('h2').textContent = time
+                    }
+                    
+                },1000)
+            }
+            function stopTimer(event){
+                clearInterval(countDown)
+
+            }
+        </script>
+    </body>
+</html>

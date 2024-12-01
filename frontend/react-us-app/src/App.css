@@ -1,0 +1,27 @@
+.App {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200111131018/preview1.png);
+    background-size: 'cover';
+    height: 100vh;
+    /* margin-top: -100px;
+    background-repeat: no-repeat; */
+    color:rgb(18, 17, 17);
+}
+button{
+    background-color: chartreuse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    margin:auto;
+    text-align: center;
+}
+
+#top-nav {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
